@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="../../universal/js/interaction.js"></script>
+    <script type="text/javascript" src="../../universal/js/serverInteraction.js"></script>
+    <script type="text/javascript" src="../../universal/js/response.js"></script>
+    <script type="text/javascript" src="../../universal/js/middle.js"></script>
+    <script type="text/javascript" src="../js/signup.js"></script>
+
+    <link rel="stylesheet" href="../css/signup.css">    
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign Up</h2>
+        <form action="#">
+            <div class="input-group" id="usernameContainer">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group" id="passwordContainer">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group" id="confirmPasswordContainer">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirm-password" required>
+            </div>
+            <div class="input-group" id="emailContainer">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div type="submit" id="submitButton">Sign Up</div>
+        </form>
+        <p class="signup-link">Already have an account? <a href="index.html">Login</a></p>
+    </div>
+</body>
+</html>

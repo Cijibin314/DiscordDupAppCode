@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#contactList {
+    width: 25%;
+    background-color: #2f3136;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.conversationTitle {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #4a4c52;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.conversationTitle:hover {
+    background-color: #5b5e65;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.conversationTitle:active {
+    background-color: #3a3c41;
+}
+
+#addConversation {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #4a4c52;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#addConversation:hover {
+    background-color: #5b5e65;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#addConversation:active {
+    background-color: #3a3c41;
+}
+
+#mainArea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-width: 20px;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.userMessage {
+    align-self: flex-end;
+    background-color: rgb(79, 79, 255);
+}
+
+.receiverMessage, .userMessage {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 50%;
+    word-wrap: break-word;
+    border: 1px solid transparent;
+}
+
+.receiverMessage {
+    align-self: flex-start;
+    background-color: #6fda6f;
+}
+
+#inputBar {
+    display: flex;
+}
+
+#inputArea {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#sendButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7289da;
+    color: white;
+    cursor: pointer;
+}
+
+#sendButton:hover {
+    background-color: #5b6eae;
+}
+
+.unreadMessage {
+    border: 1px solid red;
+}
