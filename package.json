@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "dist": "npx electron-builder",
-    "pack": "electron-builder --dir"
+    "package": "electron-packager . MyApp --platform=win32 --arch=x64 --out=out --overwrite"
   },
   "author": "",
   "license": "ISC",
@@ -15,37 +14,6 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "electron": "^31.3.1",
-    "electron-builder": "^24.13.3"
-  },
-  "build": {
-    "appId": "com.discordDupCompanyName.discordDup",
-    "productName": "Discord Duplicate",
-    "compression": "maximum",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "main.js",
-      "package.json",
-      "package-lock.json",
-      ".gitignore",
-      "login/**/*",
-      "mainPage/**/*",
-      "universal/**/*",
-      "node_modules/**/*"
-    ],
-    "win": {
-      "target": "nsis"
-    },
-    "mac": {
-      "target": "dmg"
-    },
-    "linux": {
-      "target": [
-        "AppImage",
-        "deb"
-      ]
-    }
+    "electron": "^31.3.1"
   }
 }
