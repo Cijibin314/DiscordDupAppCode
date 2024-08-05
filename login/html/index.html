@@ -3,6 +3,7 @@
 <head>
     <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' ws://localhost:8080 wss://discorddupbackend.onrender.com;">
     <script type="text/javascript" src="../../universal/js/interaction.js"></script>
     <script type="text/javascript" src="../../universal/js/serverInteraction.js"></script>
     <script type="text/javascript" src="../../universal/js/response.js"></script>
@@ -25,7 +26,7 @@
             </div>
             <div id="resetPasswordGroup">
                 <div id="resetPassword">Forgot Password?</div>
-                <p id="passwordResetExplain">An email will be sent shortly</p>
+                <p id="resetPasswordLog">An email will be sent shortly</p>
             </div>
             <div type="submit" id="submitButton">Login</div>
         </form>

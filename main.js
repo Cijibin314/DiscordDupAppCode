@@ -8,14 +8,14 @@ function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, './login/js/preload.js'),
       contextIsolation: true,
       enableRemoteModule: false,
       nodeIntegration: false,
     }
   });
 
-  mainWindow.loadFile('../html/index.html');
+  mainWindow.loadFile('./login/html/index.html');
 
   mainWindow.on('closed', function () {
     mainWindow = null;
@@ -38,7 +38,7 @@ app.on('activate', function () {
 
 ipcMain.on('open-main-page', (event, username) => {
   console.log('Received open-main-page with username:', username); // Debug statement
-  mainWindow.loadFile('../../mainPage/html/mainPage.html').then(() => {
+  mainWindow.loadFile('./mainPage/html/mainPage.html').then(() => {
     console.log('Main page loaded'); // Debug statement
     console.log("Sending: ", username)
     mainWindow.webContents.send('set-username', username);

@@ -65,19 +65,26 @@ async function newConvTitle(){
     title.addEventListener("keydown", async (event)=>{
         if(event.key === "Enter"){
             const nameOfReceiver = title.value
+            console.log("Receiver: ", nameOfReceiver)
             const existsId = await serverInteractions.userExists(nameOfReceiver)
             await waitUntilResolved(existsId)
             if(globalExistingUsers.includes(nameOfReceiver) && !document.getElementById(`conversationTitle${nameOfReceiver}`)){
+                console.log("User exists")
                 const convName = generateConversationLabel(globalUsername, nameOfReceiver)
+                console.log("Conv Name: ", convName)
                 globalConvHistories[convName] = []
                 title.remove()
+                console.log("Removed temp title")
                 const permTitle = new ConvTitle(nameOfReceiver)
+                console.log("Made perm title: ", permTitle)
                 // adding the new conversation to history
                 const addToHistoryId = await serverInteractions.newConversationHistory(nameOfReceiver, globalUsername)
                 await waitUntilResolved(addToHistoryId)
-                permTitle.render()
+                console.log("Added to history")
+                await permTitle.render("top")
+                console.log("Rendered title")
                 renderConversation(convName, true)
-                
+                console.log("Rendered conversation")
             }else{
                 console.log("Doesn't exist       |or|          already is a conv title")
                 title.remove()
