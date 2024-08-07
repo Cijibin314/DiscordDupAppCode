@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "package": "electron-packager . MyApp --platform=win32 --arch=x64 --out=out --overwrite"
+    "package": "electron-packager . DiscordDup --platform=win32,darwin,linux --arch=x64 --out=out --overwrite"
   },
   "author": "",
   "license": "ISC",
