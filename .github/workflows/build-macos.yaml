@@ -1,16 +1,10 @@
-name: Build Electron App
+name: Build Electron App for macOS
 
 on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-        platform: [win32, linux, darwin]
-        arch: [x64]
+    runs-on: macos-latest
 
     steps:
     - name: Checkout code
@@ -25,10 +19,10 @@ jobs:
       run: npm install
 
     - name: Package Electron App
-      run: npx electron-packager . MyApp --platform=${{ matrix.platform }} --arch=${{ matrix.arch }} --out=out --overwrite
+      run: npx electron-packager . MyApp --platform=darwin --arch=x64 --out=out --overwrite
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: MyApp-${{ matrix.platform }}-${{ matrix.arch }}
+        name: MyApp-macos
         path: out/
