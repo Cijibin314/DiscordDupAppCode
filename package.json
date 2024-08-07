@@ -1,15 +1,14 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "A frontend app to allow users to commumicate similar to a messaging system",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "package": "electron-packager . DiscordDup --platform=win32,darwin,linux --arch=x64 --out=out --overwrite"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "path": "^0.12.7"
   },
