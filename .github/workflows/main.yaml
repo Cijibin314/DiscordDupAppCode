@@ -1,0 +1,33 @@
+name: Build Electron App
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        platform: [win32, linux, darwin]
+        arch: [x64]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Package Electron App
+      run: npx electron-packager . MyApp --platform=${{ matrix.platform }} --arch=${{ matrix.arch }} --out=out --overwrite
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: MyApp-${{ matrix.platform }}-${{ matrix.arch }}
+        path: out/
