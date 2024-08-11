@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: '16'
     - run: npm install
-    - run: npm run dist:mac
+    - run: npm run dist -- -m
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -29,7 +29,7 @@ jobs:
       with:
         node-version: '16'
     - run: npm install
-    - run: npm run dist:win
+    - run: npm run dist -- -w
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -42,6 +42,6 @@ jobs:
       with:
         node-version: '16'
     - run: npm install
-    - run: npm run dist:linux
+    - run: npm run dist -- -l
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
