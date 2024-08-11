@@ -25,7 +25,11 @@
     "files": [
       "dist/**/*",
       "main.js",
-      "package.json"
+      "package.json",
+      "mainPage/**/*",
+      "login/**/*",
+      "universal/**/*",
+      "build/**/*"
     ],
     "directories": {
       "output": "release"
